@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/connect/servicem8",
+      "destination": "https://lumen-omega-gules.vercel.app/api/connect/servicem8"
+    },
+    {
+      "source": "/connect/servicem8/callback",
+      "destination": "https://lumen-omega-gules.vercel.app/api/connect/servicem8/callback"
+    }
+  ]
+}
