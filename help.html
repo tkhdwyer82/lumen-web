@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUMEN Help — Setup, how it works, and support</title>
+<meta name="description" content="How to connect LUMEN to ServiceM8, what your customers receive, how opt-outs work, and how to get support.">
+<style>
+  :root{
+    --ink:#1d1d1f; --sub:#6e6e73; --hair:#e8e8ed; --accent:#0a84ff;
+    --bubble-in:#e9e9eb; --bubble-out:#0a84ff; --bg:#ffffff; --panel:#f5f5f7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg);
+    font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+  header{
+    border-bottom:1px solid var(--hair);
+    padding:20px 24px;
+  }
+  .nav{max-width:680px;margin:0 auto;display:flex;justify-content:space-between;align-items:baseline}
+  .wordmark{font-weight:700;letter-spacing:.14em;font-size:15px;color:var(--ink)}
+  .nav a.back{font-size:15px}
+
+  main{max-width:680px;margin:0 auto;padding:56px 24px 96px}
+
+  h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.015em;margin-bottom:12px}
+  .lede{font-size:21px;color:var(--sub);margin-bottom:40px}
+
+  .toc{border:1px solid var(--hair);border-radius:14px;padding:20px 24px;margin-bottom:56px;background:var(--panel)}
+  .toc p{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:10px}
+  .toc ol{list-style:none}
+  .toc li{padding:3px 0;font-size:16px}
+
+  section{margin-bottom:56px}
+  h2{font-size:26px;font-weight:700;letter-spacing:-.01em;margin-bottom:14px;padding-top:8px}
+  h3{font-size:18px;font-weight:600;margin:24px 0 8px}
+  p{margin-bottom:14px}
+  p:last-child{margin-bottom:0}
+  ul,ol{margin:0 0 14px 22px}
+  li{margin-bottom:6px}
+
+  .steps{list-style:none;margin:20px 0 0;counter-reset:step}
+  .steps li{
+    counter-increment:step; position:relative;
+    padding:0 0 22px 52px; margin:0;
+    border-left:1px solid var(--hair); margin-left:17px;
+  }
+  .steps li:last-child{border-left:1px solid transparent;padding-bottom:0}
+  .steps li::before{
+    content:counter(step);
+    position:absolute; left:-18px; top:0;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--ink);color:#fff;
+    font-size:15px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .steps strong{display:block;margin-bottom:2px}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);font-weight:600}
+  td:first-child{white-space:nowrap;font-weight:600}
+
+  /* SMS demo — the one showpiece */
+  .phone{
+    max-width:340px;margin:28px auto;
+    border:1px solid var(--hair);border-radius:28px;
+    padding:18px 14px 22px;background:#fff;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+  }
+  .phone .from{
+    text-align:center;font-size:13px;color:var(--sub);
+    padding-bottom:12px;border-bottom:1px solid var(--hair);margin-bottom:14px;
+  }
+  .phone .from b{display:block;color:var(--ink);font-size:15px}
+  .msg{max-width:82%;padding:9px 13px;border-radius:18px;font-size:15px;line-height:1.4;margin-bottom:8px;clear:both}
+  .msg.in{background:var(--bubble-in);color:var(--ink);float:left;border-bottom-left-radius:5px}
+  .msg.out{background:var(--bubble-out);color:#fff;float:right;border-bottom-right-radius:5px}
+  .msg-meta{clear:both;text-align:center;font-size:12px;color:var(--sub);padding:6px 0}
+  .phone::after{content:"";display:block;clear:both}
+
+  .note{
+    border-left:3px solid var(--accent);
+    background:var(--panel);
+    padding:14px 18px;border-radius:0 10px 10px 0;
+    font-size:15px;margin:16px 0;
+  }
+
+  footer{
+    border-top:1px solid var(--hair);
+    padding:28px 24px;color:var(--sub);font-size:14px;
+  }
+  .foot{max-width:680px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media (max-width:480px){
+    h1{font-size:32px}
+    .lede{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <span class="wordmark">LUMEN</span>
+    <a class="back" href="/">getlumen.com.au</a>
+  </div>
+</header>
+
+<main>
+  <h1>Help &amp; setup guide</h1>
+  <p class="lede">Everything about connecting LUMEN to ServiceM8, what your customers receive, and how to manage or stop the service.</p>
+
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#what">What LUMEN does</a></li>
+      <li><a href="#connect">Connecting your ServiceM8 account</a></li>
+      <li><a href="#permissions">Permissions LUMEN asks for</a></li>
+      <li><a href="#setup">What happens after you connect</a></li>
+      <li><a href="#messages">What your customers receive</a></li>
+      <li><a href="#replies">Replies, bookings and outcomes</a></li>
+      <li><a href="#optout">Opt-outs and message rules</a></li>
+      <li><a href="#billing">Billing</a></li>
+      <li><a href="#disconnect">Pausing or disconnecting</a></li>
+      <li><a href="#support">Support</a></li>
+    </ol>
+  </nav>
+
+  <section id="what">
+    <h2>What LUMEN does</h2>
+    <p>LUMEN is a done-for-you quote follow-up service. It connects to your ServiceM8 account, finds quotes that were sent to customers but never answered, and follows them up by SMS — sent as your business, from a dedicated Australian mobile number, referencing the specific job.</p>
+    <p>Replies route straight to your phone. When a quote books, the outcome is recorded against the job in your ServiceM8 account, so you can see exactly which jobs LUMEN recovered.</p>
+    <p>LUMEN works with your ServiceM8 <strong>Online Dashboard</strong>. There is nothing to install on your phone or iPad — follow-ups run in the background, and replies arrive as normal SMS on the mobile number you nominate.</p>
+  </section>
+
+  <section id="connect">
+    <h2>Connecting your ServiceM8 account</h2>
+    <ol class="steps">
+      <li><strong>Open the LUMEN listing</strong> In your ServiceM8 Online Dashboard, go to Settings, then ServiceM8 Add-ons, and find LUMEN.</li>
+      <li><strong>Press Connect</strong> ServiceM8 shows a permission screen listing exactly what LUMEN can access. Review it and press Allow.</li>
+      <li><strong>Done</strong> You are returned to ServiceM8. There is no separate username or password to create — your ServiceM8 login is all you need.</li>
+    </ol>
+    <p class="note">Connecting does not send any messages. Nothing goes to a customer until your quote list has been reviewed with you and you have approved the go-live. See <a href="#setup">what happens after you connect</a>.</p>
+  </section>
+
+  <section id="permissions">
+    <h2>Permissions LUMEN asks for</h2>
+    <p>LUMEN requests the minimum access needed to find unresolved quotes, message the right person, and record outcomes.</p>
+    <table>
+      <thead><tr><th>Access</th><th>Why LUMEN needs it</th></tr></thead>
+      <tbody>
+        <tr><td>Basic account info</td><td>Your business name, so messages are sent as your business and your account is identified correctly.</td></tr>
+        <tr><td>Jobs</td><td>To find quotes that were sent but never resolved, and to record the outcome against the job when one books.</td></tr>
+        <tr><td>Customers &amp; contacts</td><td>To message the right person about the right quote, using the mobile number already on the job.</td></tr>
+        <tr><td>Job materials</td><td>To reference what was quoted so follow-ups are specific to the work, not generic.</td></tr>
+      </tbody>
+    </table>
+    <p>LUMEN does not access payments, and cannot take payment from your customers. Your data is stored in Australia (Sydney). See our <a href="/privacy.html">Privacy Policy</a> for full detail on data handling and retention.</p>
+  </section>
+
+  <section id="setup">
+    <h2>What happens after you connect</h2>
+    <ol class="steps">
+      <li><strong>Quote scan</strong> LUMEN reads your job history and builds a list of quotes that were sent but never answered.</li>
+      <li><strong>Review with you</strong> Before anything is sent, we walk the list with you. You choose which quotes are in, which are out, and the mobile number your customers' replies should route to.</li>
+      <li><strong>Your sending number</strong> LUMEN provisions a dedicated Australian mobile number for your business. Every follow-up your customers receive comes from that number, signed off with your business name.</li>
+      <li><strong>Go live</strong> Follow-ups begin on the approved list. New quotes that go stale are picked up automatically from then on.</li>
+    </ol>
+  </section>
+
+  <section id="messages">
+    <h2>What your customers receive</h2>
+    <p>Short, personal messages that read like they came from you — referencing the specific job, sent during sensible hours, with a clear way to opt out.</p>
+
+    <div class="phone" role="img" aria-label="Example SMS conversation between a plumbing business and a customer">
+      <div class="from"><b>Marlin Plumbing</b>0491 570 006</div>
+      <div class="msg-meta">Tuesday 10:12 am</div>
+      <div class="msg in">Hi Sarah, it's Marlin Plumbing. Just checking in on the quote we sent for the hot water system at Kellett St. Happy to answer any questions or lock in a time. Reply STOP to opt out.</div>
+      <div class="msg out">Oh thanks for the nudge. Can you still do it this month?</div>
+      <div class="msg in">We can. There's availability the week of the 15th. Want me to pencil you in and confirm the day?</div>
+      <div class="msg out">Yes please, Thursday works</div>
+    </div>
+
+    <p>Messages are sent under your existing customer relationship, follow Australian Spam Act requirements, and always identify your business. Send times respect quiet hours — no early mornings, late nights, or unsociable weekend sends.</p>
+  </section>
+
+  <section id="replies">
+    <h2>Replies, bookings and outcomes</h2>
+    <h3>Replies</h3>
+    <p>Customer replies route straight through to the mobile number you nominated during setup. You answer as yourself, the way you always have — LUMEN starts the conversation; you close the job.</p>
+    <h3>Bookings</h3>
+    <p>When a chased quote books, the outcome is recorded against the job in your ServiceM8 account. Your job history stays the single source of truth — you can verify every recovered job in your own system, not on a report we produce.</p>
+  </section>
+
+  <section id="optout">
+    <h2>Opt-outs and message rules</h2>
+    <ul>
+      <li>Every follow-up includes a clear opt-out instruction (Reply STOP).</li>
+      <li>If a customer replies STOP, they are opted out immediately and permanently. LUMEN will never message that number again — for any business using LUMEN, not just yours.</li>
+      <li>Follow-ups are limited to a short, respectful sequence per quote. If there is no response, the sequence ends. Customers are never chased indefinitely.</li>
+      <li>Messages only go to customers you have an existing relationship with — people who asked you for a quote.</li>
+    </ul>
+  </section>
+
+  <section id="billing">
+    <h2>Billing</h2>
+    <p>The ServiceM8 add-on is free to connect. The LUMEN service is billed separately by Lumen Pty Ltd:</p>
+    <ul>
+      <li><strong>First 90 days free</strong> on your existing stale quotes — everything that books is yours.</li>
+      <li><strong>From A$99/month after that.</strong> No lock-in contract; cancel any time.</li>
+    </ul>
+    <p>No payment details are ever collected inside ServiceM8. Billing is arranged directly with LUMEN.</p>
+  </section>
+
+  <section id="disconnect">
+    <h2>Pausing or disconnecting</h2>
+    <p>You are in control at all times.</p>
+    <ul>
+      <li><strong>Pause sending:</strong> email <a href="mailto:support@getlumen.com.au">support@getlumen.com.au</a> and sending stops the same business day.</li>
+      <li><strong>Disconnect entirely:</strong> in ServiceM8, go to Settings, then ServiceM8 Add-ons, open LUMEN and switch it off. This revokes LUMEN's access to your account.</li>
+      <li><strong>Data deletion:</strong> after disconnecting, you can request deletion of data LUMEN holds by emailing support. See the <a href="/privacy.html">Privacy Policy</a> for retention detail.</li>
+    </ul>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p>Email <a href="mailto:support@getlumen.com.au">support@getlumen.com.au</a> — monitored every business day, and we reply quickly. Include your business name and, if it helps, the job number you're asking about.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© Lumen Pty Ltd · Sydney, Australia</span>
+    <span><a href="/privacy.html">Privacy Policy</a> · <a href="mailto:support@getlumen.com.au">support@getlumen.com.au</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
