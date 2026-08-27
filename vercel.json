@@ -1,4 +1,20 @@
-cd ~/lumen-web        # wherever your lumen-web checkout lives
-git remote -v         # must show .../lumen-web.git, not Lumen.git
-pbpaste > vercel.json # same full block as before — it already includes the two servicem8 rewrites
-git add vercel.json && git commit -m "Add /api/twilio/* rewrites for Twilio webhooks" && git push
+{
+  "rewrites": [
+    {
+      "source": "/connect/servicem8",
+      "destination": "https://lumen-omega-gules.vercel.app/api/connect/servicem8"
+    },
+    {
+      "source": "/connect/servicem8/callback",
+      "destination": "https://lumen-omega-gules.vercel.app/api/connect/servicem8/callback"
+    },
+    {
+      "source": "/api/twilio/inbound",
+      "destination": "https://lumen-omega-gules.vercel.app/api/twilio/inbound"
+    },
+    {
+      "source": "/api/twilio/status",
+      "destination": "https://lumen-omega-gules.vercel.app/api/twilio/status"
+    }
+  ]
+}
